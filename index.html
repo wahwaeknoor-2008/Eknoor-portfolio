@@ -1,78 +1,247 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Eknoor Wadhwa | Computer Science @ Waterloo</title>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Eknoor Wadhwa — Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="grid"></div>
-<header>
-  <a class="logo" href="#">EW<span>.</span></a>
-  <nav><a href="#work">Work</a><a href="#about">About</a><a href="#contact">Contact</a></nav>
-</header>
-<main>
-<section class="hero">
-  <div class="hero-copy">
-    <p class="eyebrow">COMPUTER SCIENCE • UNIVERSITY OF WATERLOO</p>
-    <h1>I build <span>things</span><br>with code.</h1>
-    <p class="lead">First-year CS student exploring software engineering, AI, and creative technology — with a bias toward building real things for real people.</p>
-    <div class="buttons"><a class="btn primary" href="#work">Explore my work ↓</a><a class="btn" href="https://github.com/wahwaeknoor-2008" target="_blank">GitHub ↗</a></div>
-  </div>
-  <div class="scene" aria-label="Interactive 3D-style project lab">
-    <div class="orb"></div>
-    <div class="cube cube1"><span>AI</span></div>
-    <div class="cube cube2"><span>IoT</span></div>
-    <div class="cube cube3"><span>WEB</span></div>
-    <div class="ring ring1"></div><div class="ring ring2"></div>
-  </div>
-</section>
 
-<section class="stats">
-  <div><b>95%+</b><span>High-school academic average</span></div>
-  <div><b>$2K</b><span>Waterloo President's Scholarship</span></div>
-  <div><b>500+</b><span>Community volunteer hours</span></div>
-  <div><b>15+</b><span>NFC products sold</span></div>
-</section>
+  <div id="progress"></div>
+  <div id="bg-wrap"><canvas id="bg-canvas"></canvas></div>
 
-<section id="work" class="section">
-  <p class="eyebrow">SELECTED WORK</p>
-  <h2>Projects & ventures</h2>
-  <div class="cards">
-    <article class="card tilt"><div class="icon">⌁</div><h3>Arduino Engineering</h3><p>Built an automated sensor dustbin, radar system, and fire alarm using Arduino Uno, sensors, and programmed logic.</p><span>Arduino • C++ • Sensors</span></article>
-    <article class="card tilt"><div class="icon">⌂</div><h3>Web Design & Maintenance</h3><p>Designed and maintained websites for 5+ local businesses, translating owner needs into practical digital solutions.</p><span>Web • Clients • Maintenance</span></article>
-    <article class="card tilt"><div class="icon">NFC</div><h3>Google Review Cards</h3><p>Created and programmed NFC review cards, pitched the product to local businesses, and sold 15+ cards.</p><span>NFC • Product • Sales</span></article>
-    <article class="card tilt future"><div class="icon">AI</div><h3>RAG Study Assistant</h3><p>In development: a document-based AI study assistant with retrieval, citations, summaries, quizzes, and flashcards.</p><span>Python • RAG • FastAPI • React</span></article>
-  </div>
-</section>
+  <header class="nav">
+    <div class="nav-inner">
+      <a href="#top" class="brand"><span class="brand-dot"></span>Eknoor Wadhwa</a>
+      <nav class="links" id="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#flagship">Flagship</a>
+        <a href="#projects">Projects</a>
+        <a href="#achievements">Achievements</a>
+      </nav>
+      <a href="#contact" class="nav-cta">Get in touch</a>
+      <button id="nav-toggle" aria-label="Toggle menu">☰</button>
+    </div>
+  </header>
 
-<section id="about" class="section split">
-  <div><p class="eyebrow">ABOUT</p><h2>Curious, practical, and entrepreneurial.</h2></div>
-  <div><p>I'm a first-year Computer Science student in the Faculty of Mathematics at the University of Waterloo. I enjoy turning ideas into working technology — from Arduino systems and websites to small products sold to real businesses.</p>
-  <p>Outside technology, I've contributed 500+ volunteer hours to community programs and participated in badminton and drama. I'm currently focused on becoming a stronger software engineer and exploring AI.</p></div>
-</section>
+  <main id="top">
 
-<section class="section">
-  <p class="eyebrow">CURRENT TOOLKIT</p>
-  <div class="chips"><span>Python</span><span>C++</span><span>HTML</span><span>Arduino</span><span>Generative AI</span><span>NFC</span><span>GitHub</span></div>
-</section>
+    <section class="hero">
+      <div class="wrap">
+        <div class="hero-tilt" id="hero-tilt">
+          <div class="hero-kicker mono">Computer Science · University of Waterloo</div>
+          <h1>Eknoor Wadhwa</h1>
+          <p class="hero-sub">First-year Computer Science student in the Faculty of Mathematics at the University of Waterloo, expected to graduate in 2031. I like building things end to end — circuits, code, and the AI in between.</p>
+          <div class="hero-actions">
+            <a href="#flagship" class="btn btn-primary">See my work</a>
+            <a href="#contact" class="btn btn-ghost">Say hello</a>
+          </div>
+        </div>
+      </div>
+      <div class="scroll-cue"><span>Scroll</span><span class="line"></span></div>
+    </section>
 
-<section class="section certs">
-  <p class="eyebrow">LEARNING</p>
-  <h2>Certifications</h2>
-  <p>Career Essentials in Generative AI — Microsoft & LinkedIn</p>
-  <p>Google AI Fundamentals — Google</p>
-  <p>Introduction to Artificial Intelligence — Google</p>
-</section>
+    <section id="about">
+      <div class="wrap about-grid">
+        <div class="reveal">
+          <div class="eyebrow">About</div>
+          <h2 class="section-title">From breadboards to browsers</h2>
+          <div class="about-text">
+            <p>I got into building through hardware — Arduino sensors, wiring, and debugging circuits late into the night. That same instinct pulled me toward software: I've designed and maintained websites for five local businesses, and built and sold an NFC-enabled product from scratch, handling everything from the electronics to the sales pitch myself.</p>
+            <p>Now I'm studying Computer Science at Waterloo. Most of my free time goes into an AI study assistant I'm building as a flagship project, and I'm picking up Racket on the side.</p>
+          </div>
+          <div class="edu-card">
+            <div class="school">University of Waterloo</div>
+            <div class="deg">Bachelor of Computer Science, Faculty of Mathematics — First year, expected 2031</div>
+            <div class="course-tags">
+              <span>CS 135</span><span>MATH 135</span><span>MATH 147</span><span>FREN 101</span><span>ENGL 119</span>
+            </div>
+          </div>
+        </div>
+        <div class="reveal stat-grid">
+          <div class="stat"><div class="num">5+</div><div class="label">local businesses with sites I built &amp; maintain</div></div>
+          <div class="stat"><div class="num">15+</div><div class="label">NFC review cards designed, made, and sold</div></div>
+          <div class="stat"><div class="num">500+</div><div class="label">hours volunteered in my community</div></div>
+          <div class="stat"><div class="num">95%+</div><div class="label">admission average, President's Scholarship</div></div>
+        </div>
+      </div>
+    </section>
 
-<section id="contact" class="contact-section">
-  <p class="eyebrow">LET'S CONNECT</p>
-  <h2>Have a problem worth building?</h2>
-  <a class="email" href="mailto:e4wadhwa@uwaterloo.ca">e4wadhwa@uwaterloo.ca</a>
-  <div class="links"><a href="https://www.linkedin.com/in/eknoor-wadhwa-a18661363" target="_blank">LinkedIn ↗</a><a href="https://github.com/wahwaeknoor-2008" target="_blank">GitHub ↗</a></div>
-</section>
-</main>
-<footer>EKNOOR WADHWA • WATERLOO CS • 2026</footer>
+    <section id="skills">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">Skills</div>
+          <h2 class="section-title">Where I'm at right now</h2>
+        </div>
+        <div class="skills-grid">
+          <div class="reveal">
+            <div class="skill-row"><span class="skill-name">Python</span><div class="signal"><i class="on"></i><i class="on"></i><i></i></div></div>
+            <div class="skill-row"><span class="skill-name">C++</span><div class="signal"><i class="on"></i><i></i><i></i></div></div>
+            <div class="skill-row"><span class="skill-name">HTML</span><div class="signal"><i class="on"></i><i></i><i></i></div></div>
+            <div class="skill-row"><span class="skill-name">Arduino / C++</span><div class="signal"><i class="on"></i><i class="on"></i><i></i></div></div>
+            <div class="learning-block">
+              <span class="learning-dot"></span>
+              <div><strong>Currently learning: Racket</strong><div style="color:var(--ink-muted); font-size:.85rem; margin-top:2px;">Picking it up alongside my coursework right now.</div></div>
+            </div>
+          </div>
+          <div class="reveal">
+            <div class="pill-group">
+              <h3>AI &amp; tools</h3>
+              <div class="pills">
+                <span class="pill">Generative AI</span>
+                <span class="pill">Prompt engineering</span>
+                <span class="pill">Microsoft Copilot</span>
+                <span class="pill">AI fundamentals</span>
+              </div>
+            </div>
+            <div class="pill-group">
+              <h3>Platforms &amp; practical</h3>
+              <div class="pills">
+                <span class="pill">GitHub</span>
+                <span class="pill">Website design &amp; maintenance</span>
+                <span class="pill">NFC configuration &amp; programming</span>
+              </div>
+            </div>
+            <div class="pill-group">
+              <h3>Strengths</h3>
+              <div class="pills">
+                <span class="pill">Problem solving</span>
+                <span class="pill">Customer discovery</span>
+                <span class="pill">Pitching</span>
+                <span class="pill">Teamwork</span>
+                <span class="pill">Communication</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="flagship">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">Flagship project</div>
+          <h2 class="section-title">AI Study Assistant</h2>
+        </div>
+        <div class="flagship-card reveal tilt">
+          <div class="flagship-top">
+            <div class="flagship-title">Turn lecture notes into a study partner</div>
+            <span class="status-pill">In progress</span>
+          </div>
+          <p class="flagship-desc">Students upload lecture notes, slides, and PDFs, then ask questions about the specific material and get answers with direct citations back to the source — "Lecture 7, page 12" — instead of a generic AI answer that could be about anything.</p>
+
+          <span class="tag-label">Planned features</span>
+          <div class="feature-tags">
+            <span>Generate quiz</span><span>Make flashcards</span><span>Practice questions</span><span>Summarize</span><span>Mastery dashboard</span>
+          </div>
+
+          <span class="tag-label">Tech stack</span>
+          <div class="stack-tags">
+            <span>Python</span><span>FastAPI</span><span>React</span><span>PostgreSQL</span><span>LLM API</span><span>Embeddings</span><span>Vector database</span><span>RAG</span>
+          </div>
+
+          <span class="tag-label">Build roadmap</span>
+          <div class="roadmap">
+            <div class="rstep"><div class="v">V1</div><div class="t">Upload &amp; summarize (Streamlit)</div></div>
+            <div class="rstep"><div class="v">V2</div><div class="t">Ask questions about the PDF</div></div>
+            <div class="rstep"><div class="v">V3</div><div class="t">RAG with citations</div></div>
+            <div class="rstep"><div class="v">V4</div><div class="t">Quizzes &amp; flashcards</div></div>
+            <div class="rstep"><div class="v">V5</div><div class="t">Accounts &amp; database</div></div>
+            <div class="rstep"><div class="v">V6</div><div class="t">React / FastAPI app</div></div>
+            <div class="rstep"><div class="v">V7</div><div class="t">Deploy publicly</div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">Projects</div>
+          <h2 class="section-title">Things I've built</h2>
+          <p class="section-lede">Outside the flagship project, most of my work started with a physical problem and ended with a working product.</p>
+        </div>
+        <div class="proj-grid">
+          <div class="proj-card reveal tilt">
+            <h3>Arduino engineering projects</h3>
+            <p>A run of small hardware builds using Arduino Uno and sensors to solve concrete problems.</p>
+            <ul>
+              <li>Automated sensor dustbin that detects objects and opens itself</li>
+              <li>Radar system that detects objects within a set range</li>
+              <li>Fire alarm that triggers alerts on heat/fire conditions</li>
+            </ul>
+            <div class="proj-tags"><span>Arduino</span><span>C++</span><span>Sensors</span></div>
+          </div>
+          <div class="proj-card reveal tilt">
+            <h3>Web design &amp; digital solutions</h3>
+            <p>Independent client work: designing, updating, and maintaining websites for local businesses.</p>
+            <ul>
+              <li>Worked directly with owners to scope requirements</li>
+              <li>Handled content updates, layout changes, and troubleshooting</li>
+              <li>Ongoing maintenance for five-plus businesses</li>
+            </ul>
+            <div class="proj-tags"><span>HTML</span><span>Client work</span><span>Maintenance</span></div>
+          </div>
+          <div class="proj-card reveal tilt">
+            <h3>NFC review cards</h3>
+            <p>An independent product venture: NFC-enabled cards that take customers straight to a business's Google review page.</p>
+            <ul>
+              <li>Configured &amp; programmed the NFC tags myself</li>
+              <li>Built the pitch and did direct outreach to local businesses</li>
+              <li>Sold 15+ cards — first hands-on run at sales &amp; entrepreneurship</li>
+            </ul>
+            <div class="proj-tags"><span>Hardware</span><span>Entrepreneurship</span><span>Sales</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="achievements">
+      <div class="wrap">
+        <div class="reveal">
+          <div class="eyebrow">Achievements</div>
+          <h2 class="section-title">Certifications &amp; recognition</h2>
+        </div>
+        <div class="ach-list reveal">
+          <div class="ach-item"><b>President's Scholarship of Distinction</b> — University of Waterloo, $2,000 entrance scholarship for a 95%+ admission average</div>
+          <div class="ach-item"><b>Proficiency Medal</b> — all three years of high school, 95%+ academic performance</div>
+          <div class="ach-item"><b>Career Essentials in Generative AI</b> — Microsoft &amp; LinkedIn</div>
+          <div class="ach-item"><b>Google AI Fundamentals</b> &amp; <b>Introduction to Artificial Intelligence</b> — Google</div>
+          <div class="ach-item"><b>500+ volunteer hours</b> — pickleball, badminton, food-bank initiatives, community events &amp; gardening</div>
+          <div class="ach-item"><b>Badminton team member</b> &amp; Assistant Stage Manager in drama productions</div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="wrap contact-inner reveal">
+        <div class="eyebrow">Contact</div>
+        <h2 class="section-title">Let's talk</h2>
+        <p class="section-lede" style="margin-bottom:0;">Always up for talking about AI, hardware, or co-op opportunities.</p>
+        <div class="contact-links">
+          <a href="mailto:wadhwa.eknoor2008@gmail.com"><span class="k mono">EMAIL</span><span class="v">wadhwa.eknoor2008@gmail.com</span></a>
+          <a href="https://linkedin.com/in/eknoor-wadhwa-a18661363" target="_blank" rel="noopener"><span class="k mono">LINKEDIN</span><span class="v">eknoor-wadhwa</span></a>
+          <a href="https://github.com/wahwaeknoor-2008" target="_blank" rel="noopener"><span class="k mono">GITHUB</span><span class="v">wahwaeknoor-2008</span></a>
+          <a href="tel:5489944706"><span class="k mono">PHONE</span><span class="v">548-994-4706</span></a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer>
+    <div class="wrap">
+      <span class="fine mono">Eknoor Wadhwa · 2026</span>
+      <span class="fine mono">Built with Waterloo curiosity</span>
+    </div>
+  </footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/128/three.min.js"></script>
 <script src="script.js"></script>
-</body></html>
+</body>
+</html>
